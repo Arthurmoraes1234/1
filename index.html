@@ -38,7 +38,7 @@
             background-size: 16px 16px;
             color: var(--texto-escuro);
             line-height: 1.7;
-            overflow-x: hidden; /* Previne scroll horizontal */
+            overflow-x: hidden;
         }
 
         .container {
@@ -105,23 +105,18 @@
         }
 
         /* 🟩 Seção 2 – Prova Social */
+        .proof-banner-wrapper {
+            width: 100%; margin-top: 40px;
+        }
+        .proof-banner {
+            width: 100%; max-width: 1000px; height: auto;
+            display: block; margin: 0 auto;
+        }
         .swiper { width: 100%; padding: 20px 0 40px 0; }
         .swiper-slide { width: 280px; }
         .swiper-slide img {
             display: block; width: 100%; border-radius: 15px;
             border: 5px solid var(--branco); box-shadow: 0 5px 20px var(--sombra-suave);
-        }
-        /* ✅ ESTILO PARA O CONTAINER DA IMAGEM GRANDE ✅ */
-        .proof-banner-wrapper {
-            width: 100%;
-            margin-top: 40px; /* Espaço entre o botão e a imagem */
-        }
-        .proof-banner {
-            width: 100%; /* Ocupa 100% do wrapper */
-            max-width: 1000px; /* Limite em telas grandes para não ficar gigante */
-            height: auto;
-            display: block;
-            margin: 0 auto; /* Centraliza a imagem quando o max-width for atingido */
         }
 
         /* 🟦 Seção 3 – O que você vai aprender */
@@ -147,6 +142,12 @@
         }
         .price-old { font-size: 1.5rem; text-decoration: line-through; opacity: 0.7; }
         .price-new { font-size: 3.5rem; font-weight: 700; margin: 10px 0; }
+        /* ✅ NOVO ESTILO PARA O TEXTO "SOMENTE HOJE" ✅ */
+        .offer-today {
+            font-weight: 700; text-transform: uppercase;
+            color: var(--texto-escuro); margin-top: -5px;
+            margin-bottom: 25px;
+        }
         .offer-list {
             list-style: none; padding: 0; text-align: left;
             max-width: 400px; margin: 30px auto 0 auto;
@@ -211,12 +212,9 @@
             </div>
             <a href="#oferta" class="cta-button">EU QUERO SER A PRÓXIMA!</a>
         </div>
-
-        <!-- ✅ IMAGEM ADICIONADA NA POSIÇÃO E TAMANHO CORRETOS ✅ -->
         <div class="proof-banner-wrapper">
             <img src="https://i.imgur.com/m51JaRR.jpeg" alt="Depoimentos e resultados das alunas" class="proof-banner">
         </div>
-
     </section>
 
     <!-- 🟦 Seção 3 – O que você vai aprender -->
@@ -241,7 +239,12 @@
             <p class="price-old">De R$197</p>
             <p class="price-new">por apenas <span class="highlight-pink">R$19,90</span></p>
             
+            <!-- ✅ TEXTO "SOMENTE HOJE" ADICIONADO ✅ -->
+            <p class="offer-today">Oferta válida <span class="highlight-pink">somente hoje!</span></p>
+            
             <ul class="offer-list">
+                <!-- ✅ NOVO BULLET ADICIONADO ✅ -->
+                <li><i class="fa-solid fa-check-circle"></i> 5 videoaulas exclusivas</li>
                 <li><i class="fa-solid fa-check-circle"></i> Treinamento completo Bem Casados Lucrativos.</li>
                 <li><i class="fa-solid fa-check-circle"></i> Planilha de precificação automática.</li>
                 <li><i class="fa-solid fa-check-circle"></i> Modelos de contrato prontos.</li>

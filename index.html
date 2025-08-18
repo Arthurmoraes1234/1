@@ -4,714 +4,523 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Casados Lucrativos</title>
-    
-    <!-- Fontes e Ícones -->
+
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper JS (Carrossel de Provas) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
     <style>
-        /* --- 🧱 Especificações e Configurações Globais 🔥 --- */
+        /* 🎨 PALETA DE CORES E CONFIGURAÇÕES GLOBAIS 🎨 */
         :root {
-            --color-background: #F5EFE6; /* Fundo bege claro */
-            --color-card: #2E282A;      /* Cor escura para os painéis */
-            --color-text: #FFFFFF;        /* Textos padrão cor branca */
-            --color-highlight: #C75B7B; /* Textos destaques cor rosa escuro */
-            --color-cta: #FFB703;         /* Amarelo/Laranja para botões */
-            --font-main: 'Poppins', sans-serif;
+            --bg-bege-claro: #FDF8F0;
+            --texto-branco: #FFFFFF;
+            --rosa-destaque: #E58A9E;
+            --amarelo-cta: #FFC107;
+            --marrom-fundo: #4A3F35;
+            --sombra-suave: rgba(0, 0, 0, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: var(--font-main);
-            background-color: var(--color-background);
-            color: var(--color-text);
-            line-height: 1.7;
-            font-weight: 400; /* Regular */
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-bege-claro);
+            color: var(--texto-branco);
+            line-height: 1.6;
         }
 
-        /* --- Componentes e Utilitários --- */
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 50px 0;
-        }
-
-        .card {
-            background-color: var(--color-card);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700; /* Bold */
-            color: var(--color-highlight);
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--color-highlight);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .highlight {
-            color: var(--color-highlight);
-            font-weight: 700; /* Bold */
-        }
-
+        /* 🎀 ESTILO DOS BOTÕES (CTA) 🎀 */
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: var(--color-cta);
-            color: var(--color-card);
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 700; /* Bold */
-            text-decoration: none;
+            display: inline-block;
+            padding: 18px 40px;
+            margin-top: 20px;
+            background: linear-gradient(145deg, #FFD700, #FFC107);
+            color: var(--marrom-fundo);
             font-size: 1.1rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
             border: none;
             cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            transition: all 0.3s ease;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-        }
-        
-        .cta-button-section {
-            margin-top: 40px;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
         }
 
-        /* --- 🟥 Seção 1: Hero --- */
-        .logo {
-            font-size: 2.2rem;
+        /* ✨ ELEMENTO DE DESIGN ÚNICO: DIVISÓRIA ONDULADA ✨ */
+        .wave-divider {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: var(--bg-bege-claro);
+        }
+
+        /* 🧱 SEÇÕES 🧱 */
+        section {
+            position: relative;
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--rosa-destaque);
             font-weight: 700;
-            color: var(--color-card);
-            margin-bottom: 30px;
-            text-align: center;
+        }
+
+        /* 🟥 Seção 1 – Headline + Hero */
+        .hero {
+            background-color: var(--marrom-fundo);
+            padding-top: 80px;
+            padding-bottom: 120px;
         }
         
-        .logo span {
-            color: var(--color-highlight);
-        }
-
-        .hero .card {
-            background: linear-gradient(135deg, #3a3234, var(--color-card));
-        }
-
         .hero h1 {
-            font-size: 2.4rem;
-            line-height: 1.3;
-            font-weight: 700;
+            font-size: 2.8rem;
+            line-height: 1.2;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        
-        .hero .video-prompt {
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .hero h1 span {
+            color: var(--rosa-destaque);
         }
 
-        /* --- 🟧 Seção 2: VSL --- */
-        .vsl-container {
-            position: relative;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero .video-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        /* 🟧 Seção 2 – História da Expert (VSL) */
+        .vsl-section .container {
+            padding-top: 0;
+        }
+
+        .vsl-placeholder {
             width: 100%;
             aspect-ratio: 16 / 9;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            overflow: hidden;
-            border: 2px solid var(--color-highlight);
-        }
-        
-        .vsl-container .placeholder {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--color-text);
-            font-weight: 500;
-        }
-
-        .vsl-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- 🟩 Seção 3: Prova Social --- */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel-track {
+            background-color: #000;
+            border-radius: 20px;
             display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            padding: 0 10px;
-        }
-        
-        .carousel-slide img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 0 auto;
-        }
-
-        .carousel-buttons {
-            margin-top: 20px;
-        }
-
-        .carousel-btn {
-            background-color: var(--color-highlight);
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-            display: inline-flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.2rem;
+            color: #ccc;
+            box-shadow: 0 10px 30px var(--sombra-suave);
+            border: 4px solid var(--rosa-destaque);
         }
 
-        .carousel-btn:hover {
-            background-color: #ad4968;
+        /* 🟩 Seção 3 – Prova Social */
+        .social-proof {
+            background-color: var(--marrom-fundo);
+            padding-bottom: 120px;
         }
 
-        /* --- 🟦 Seção 4: O que você vai aprender --- */
-        .learning-list {
+        .swiper {
+            width: 100%;
+            padding: 20px 0 40px 0;
+        }
+
+        .swiper-slide {
+            width: 280px; /* Largura dos prints */
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--sombra-suave);
+        }
+
+        /* 🟦 Seção 4 – O que você vai aprender */
+        .learn-list {
             list-style: none;
-            max-width: 550px;
-            margin: 30px auto 0;
+            padding: 0;
+            margin-top: 40px;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .learning-list li {
+        .learn-list li {
+            background-color: var(--marrom-fundo);
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
             font-size: 1.1rem;
-            padding: 15px 0 15px 45px;
-            position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .learning-list li:last-child {
-            border-bottom: none;
+            box-shadow: 0 5px 20px var(--sombra-suave);
         }
 
-        .learning-list li .iconify {
-            position: absolute;
-            left: 0;
-            top: 15px;
-            font-size: 1.8rem;
-            color: var(--color-highlight);
-        }
-
-        /* --- 🟪 Seção 5: Oferta --- */
-        #oferta .card {
-            border: 2px solid var(--color-cta);
+        .learn-list i {
+            font-size: 2rem;
+            color: var(--rosa-destaque);
+            width: 40px; /* Para alinhar o texto */
+            text-align: center;
         }
         
-        .price-box .old-price {
+        .learn-section h2 {
+            color: var(--marrom-fundo);
+        }
+
+        /* 🟪 Seção 5 – Oferta + Preço */
+        #oferta {
+            background-color: var(--marrom-fundo);
+            padding-bottom: 120px;
+        }
+
+        .offer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid var(--rosa-destaque);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        
+        .price-old {
             font-size: 1.5rem;
             text-decoration: line-through;
-            opacity: 0.6;
-        }
-
-        .price-box .new-price {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
-            color: var(--color-cta);
-            margin: 5px 0;
-            line-height: 1;
-            font-weight: 700;
+            opacity: 0.7;
         }
         
-        .price-box .price-condition {
+        .price-new {
+            font-size: 3.5rem;
             font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 30px;
+            color: var(--amarelo-cta);
+            margin: 10px 0;
         }
-
+        
+        .price-new span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--texto-branco);
+        }
+        
         .offer-list {
             list-style: none;
+            padding: 0;
             text-align: left;
-            margin: 30px 0;
-            display: inline-block;
+            max-width: 400px;
+            margin: 30px auto 0 auto;
         }
         
         .offer-list li {
-            padding: 8px 0 8px 35px;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .offer-list li .iconify {
-            position: absolute;
-            left: 0;
-            color: var(--color-cta);
-            font-size: 1.5rem;
-        }
-        
-        #oferta .cta-button {
-            transform: scale(1.1);
-        }
-
-        /* --- 🟫 Seção 6: Garantia --- */
-        .guarantee-box {
-            border: 2px dashed var(--color-highlight);
-            padding: 30px;
-            margin-top: 30px;
-            border-radius: 10px;
-        }
-        
-        .guarantee-box .iconify {
-            font-size: 4rem;
-            color: var(--color-highlight);
             margin-bottom: 15px;
-        }
-
-        .guarantee-box p {
             font-size: 1.1rem;
         }
         
-        /* --- ⬛ Seção 7: FAQ --- */
-        .faq-container {
-            max-width: 100%;
-            margin-top: 30px;
-            text-align: left;
+        .offer-list i {
+            color: var(--rosa-destaque);
+            margin-right: 10px;
         }
 
+        /* 🟫 Seção 6 – Garantia */
+        .guarantee-section h2, .faq-section h2, .final-call-section h2 {
+            color: var(--marrom-fundo);
+        }
+
+        .guarantee-icon {
+            font-size: 5rem;
+            color: var(--rosa-destaque);
+            margin-bottom: 20px;
+        }
+        
+        .guarantee-section p {
+            color: var(--marrom-fundo);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* ⬛ Seção 7 – FAQ */
+        .faq-section {
+            background-color: var(--marrom-fundo);
+            padding-bottom: 120px;
+        }
+        
         .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .faq-item:first-child {
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
+            background-color: rgba(255, 255, 255, 0.05);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 15px;
             text-align: left;
-            padding: 20px 0;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            position: relative;
-            color: var(--color-text);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .faq-question .iconify:last-child {
-            margin-left: auto;
-            font-size: 1.5rem;
-            color: var(--color-highlight);
-            transition: transform 0.3s ease;
+            border-left: 5px solid var(--rosa-destaque);
         }
         
-        .faq-question .iconify:first-child {
-            font-size: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .faq-item.active .faq-question .iconify:last-child {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 0 0 40px;
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--texto-branco);
         }
         
-        .faq-answer p {
-            padding-bottom: 20px;
+        .faq-item p {
             opacity: 0.9;
         }
         
-        /* --- 🟪 Seção Final: Reforço --- */
-        .final-call .card {
-            background-color: var(--color-highlight);
+        /* 🟪 Seção Final – Reforço */
+        .final-call-section {
+            padding: 80px 0;
         }
-        
-        .final-call h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-text);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+        .final-call-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        .final-call-section .cta-button {
+            transform: scale(1.2);
+            animation: pulse 2s infinite;
         }
 
-        .final-call .cta-button {
-            transform: scale(1.1);
-            background: var(--color-text);
-            color: var(--color-card);
+        /* Animação do botão final */
+        @keyframes pulse {
+            0% {
+                transform: scale(1.15);
+                box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            }
+            70% {
+                transform: scale(1.25);
+                box-shadow: 0 6px 30px rgba(255, 193, 7, 0.7);
+            }
+            100% {
+                transform: scale(1.15);
+                box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            }
         }
         
-        .final-call .cta-button:hover {
-            background: var(--color-background);
-        }
-
-        /* --- RESPONSIVIDADE --- */
+        /* 📱 Media Queries para Responsividade */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section-title { font-size: 2.2rem; }
-            .card { padding: 30px; }
-            .final-call h2 { font-size: 1.5rem; }
+            .hero p { font-size: 1rem; }
+            section h2 { font-size: 2rem; }
+            .price-new { font-size: 2.8rem; }
+            .learn-list li { flex-direction: column; text-align: center; }
+            .final-call-section h2 { font-size: 1.5rem; }
         }
 
     </style>
 </head>
 <body>
 
-    <main>
+    <!-- 🟥 Seção 1 – Headline + Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transforme o docinho mais famoso dos casamentos – o <span class="highlight">Bem Casado</span> – em até <span class="highlight">R$3.000 de lucro</span> em um único final de semana (mesmo sem nunca ter vendido nada antes).</h1>
+            <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
+            <p class="video-note">👇 Veja o vídeo e entenda tudo! 👇</p>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
-        <!-- 🟥 Seção 1 – Headline + Hero -->
-        <section class="hero">
-            <div class="container">
-                <div class="logo">Bem Casados <span>Lucrativos</span></div>
-                <div class="card">
-                    <h1>
-                        <iconify-icon icon="mdi:hand-pointing-right" style="color: var(--color-highlight);"></iconify-icon>
-                        “Transforme o docinho mais famoso dos casamentos – o <span class="highlight">Bem Casado</span> – em até <span class="highlight">R$3.000 de lucro</span> em um único final de semana (mesmo sem nunca ter vendido nada antes).”
-                    </h1>
-                    <p>“Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.”</p>
-                    <p class="video-prompt">
-                        <iconify-icon icon="mdi:play-circle-outline"></iconify-icon>
-                        Veja o vídeo e entenda tudo!
-                    </p>
-                    <div class="cta-button-section">
-                        <a href="#oferta" class="cta-button">
-                            <iconify-icon icon="mdi:cake-variant"></iconify-icon>
-                            Quero Descobrir o Método
-                        </a>
-                    </div>
+    <!-- 🟧 Seção 2 – História da Expert -->
+    <section class="vsl-section">
+        <div class="container">
+            <!-- 👇 COLE O CÓDIGO EMBED DO SEU VÍDEO AQUI DENTRO 👇 -->
+            <div class="vsl-placeholder">
+                📹 Espaço para o seu Vídeo de Vendas (VSL)
+            </div>
+            <!-- 👆 COLE O CÓDIGO EMBED DO SEU VÍDEO AQUI DENTRO 👆 -->
+
+            <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
+        </div>
+    </section>
+
+    <!-- 🟩 Seção 3 – Prova Social -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Elas confiaram e já estão lucrando! 🍰</h2>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento de aluna"></div>
+                    <div class="swiper-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento de aluna"></div>
+                    <div class="swiper-slide"><img src="https://i.imgur.com/tGgft6E.png" alt="Depoimento de aluna"></div>
+                    <div class="swiper-slide"><img src="https://i.imgur.com/8QnKyLd.png" alt="Depoimento de aluna"></div>
+                    <!-- Adicione mais slides se precisar -->
+                    <div class="swiper-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento de aluna"></div>
+                    <div class="swiper-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento de aluna"></div>
                 </div>
             </div>
-        </section>
+            <a href="#oferta" class="cta-button">EU QUERO SER A PRÓXIMA!</a>
+        </div>
+         <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
-        <!-- 🟧 Seção 2 – História da Expert (VSL) -->
-        <section class="vsl">
-            <div class="container">
-                <div class="card">
-                    <div class="vsl-container">
-                        <!-- 
-                            COLE SEU CÓDIGO DE EMBED DO VÍDEO AQUI
-                            Exemplo YouTube: <iframe src="https://www.youtube.com/embed/SEU_CÓDIGO_AQUI" ...></iframe>
-                        -->
-                        <div class="placeholder">ESPAÇO RESERVADO PARA O SEU VÍDEO</div>
-                    </div>
-                    <a href="#oferta" class="cta-button">
-                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
-                        QUERO COMEÇAR AGORA POR R$19,90
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- 🟦 Seção 4 – O que você vai aprender -->
+    <section class="learn-section">
+        <div class="container">
+            <h2>O que você vai aprender na prática:</h2>
+            <ul class="learn-list">
+                <li><i class="fa-solid fa-cookie-bite"></i> Como produzir bem casados profissionais em casa, com utensílios básicos.</li>
+                <li><i class="fa-solid fa-hand-holding-heart"></i> O segredo para conseguir clientes toda semana (sem depender de rede social).</li>
+                <li><i class="fa-solid fa-calculator"></i> Como calcular preço e garantir margens de 200% de lucro.</li>
+                <li><i class="fa-solid fa-file-signature"></i> Estratégias simples para fechar contratos de R$3.000 a R$5.000 em um único evento.</li>
+                <li><i class="fa-solid fa-star"></i> Receitas exclusivas que deixam os clientes pedindo mais.</li>
+            </ul>
+            <a href="#oferta" class="cta-button">QUERO APRENDER TUDO ISSO!</a>
+        </div>
+    </section>
 
-        <!-- 🟩 Seção 3 – Prova Social -->
-        <section class="social-proof">
-            <div class="container">
-                <div class="card">
-                    <h2 class="section-title">Elas já estão lucrando!</h2>
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <div class="carousel-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento 1"></div>
-                            <div class="carousel-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento 2"></div>
-                            <div class="carousel-slide"><img src="https://i.imgur.com/tGgft6E.png" alt="Depoimento 3"></div>
-                            <div class="carousel-slide"><img src="https://i.imgur.com/8QnKyLd.png" alt="Depoimento 4"></div>
-                        </div>
-                    </div>
-                    <div class="carousel-buttons">
-                        <button class="carousel-btn" id="prevBtn"><iconify-icon icon="mdi:chevron-left"></iconify-icon></button>
-                        <button class="carousel-btn" id="nextBtn"><iconify-icon icon="mdi:chevron-right"></iconify-icon></button>
-                    </div>
-                    <div class="cta-button-section">
-                        <a href="#oferta" class="cta-button">
-                             <iconify-icon icon="mdi:star-circle-outline"></iconify-icon>
-                            Eu quero ser a próxima!
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🟦 Seção 4 – O que você vai aprender -->
-        <section class="learning">
-            <div class="container">
-                <div class="card">
-                    <h2 class="section-title">O que você vai dominar</h2>
-                    <ul class="learning-list">
-                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Como produzir bem casados profissionais em casa, com utensílios básicos.</li>
-                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>O segredo para conseguir clientes toda semana (sem depender de rede social).</li>
-                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Como calcular preço e garantir margens de 200% de lucro.</li>
-                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Estratégias simples para fechar contratos de R$3.000 a R$5.000 em um único evento.</li>
-                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Receitas exclusivas que deixam os clientes pedindo mais.</li>
-                    </ul>
-                    <div class="cta-button-section">
-                        <a href="#oferta" class="cta-button">
-                            <iconify-icon icon="mdi:school-outline"></iconify-icon>
-                            Quero aprender tudo isso
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🟪 Seção 5 – Oferta + Preço -->
-        <section id="oferta">
-            <div class="container">
-                <div class="card price-box">
-                    <h2 class="section-title">Sua Oportunidade Única</h2>
-                    <p class="old-price">De R$197</p>
-                    <p class="new-price">por apenas R$19,90</p>
-                    <p class="price-condition">(somente hoje!)</p>
-                    
-                    <h3>Você recebe acesso imediato a tudo isso:</h3>
-                    <ul class="offer-list">
-                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Treinamento completo Bem Casados Lucrativos.</li>
-                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Planilha de precificação automática.</li>
-                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Modelos de contrato prontos.</li>
-                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Receitas exclusivas e testadas.</li>
-                    </ul>
-
-                    <a href="#" class="cta-button">
-                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
-                        SIM, QUERO COMEÇAR POR R$19,90
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🟫 Seção 6 – Garantia 30 Dias -->
-        <section class="guarantee">
-            <div class="container">
-                 <div class="card">
-                    <h2 class="section-title">Seu Risco é Zero</h2>
-                    <div class="guarantee-box">
-                        <iconify-icon icon="mdi:shield-check"></iconify-icon>
-                        <p>“Você tem 30 dias completos para testar o método. Se não acreditar que este treinamento pode te gerar pelo menos R$3.000 em renda extra, devolvemos seu dinheiro sem perguntas. Ou seja: você pode acessar todo o conteúdo sem risco nenhum.”</p>
-                    </div>
-                    <div class="cta-button-section">
-                        <a href="#oferta" class="cta-button">
-                            <iconify-icon icon="mdi:lock-open-variant-outline"></iconify-icon>
-                            Quero começar sem riscos
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ⬛ Seção 7 – FAQ -->
-        <section class="faq">
-            <div class="container">
-                <div class="card">
-                    <h2 class="section-title">Perguntas Frequentes</h2>
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <iconify-icon icon="mdi:chef-hat"></iconify-icon>
-                                Preciso saber cozinhar?
-                                <iconify-icon icon="mdi:plus"></iconify-icon>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Não. Qualquer pessoa consegue seguir o passo a passo mesmo sem experiência.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <iconify-icon icon="mdi:home-kitchen"></iconify-icon>
-                                Preciso ter cozinha profissional?
-                                <iconify-icon icon="mdi:plus"></iconify-icon>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Não. Dá pra começar na cozinha da sua própria casa.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <iconify-icon icon="mdi:cash-multiple"></iconify-icon>
-                                Quanto posso faturar com isso?
-                                <iconify-icon icon="mdi:plus"></iconify-icon>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Nossas alunas já fizeram de R$3.000 a R$5.000 em apenas um final de semana.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <iconify-icon icon="mdi:laptop"></iconify-icon>
-                                O curso é online?
-                                <iconify-icon icon="mdi:plus"></iconify-icon>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Sim. Você recebe acesso imediato, pode assistir do celular ou computador.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <iconify-icon icon="mdi:hand-heart-outline"></iconify-icon>
-                                E se não funcionar pra mim?
-                                <iconify-icon icon="mdi:plus"></iconify-icon>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Você tem 30 dias de garantia para pedir seu reembolso sem burocracia.</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="cta-button-section">
-                        <a href="#oferta" class="cta-button">
-                            <iconify-icon icon="mdi:check-all"></iconify-icon>
-                            Estou decidida!
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 🟪 Seção Final – Reforço -->
-        <section class="final-call">
-            <div class="container">
-                 <div class="card">
-                    <h2>
-                        <iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>
-                        “Casamentos acontecem toda semana. Você vai continuar de fora ou vai aproveitar essa oportunidade por apenas R$19,90?”
-                    </h2>
-                     <a href="#oferta" class="cta-button">
-                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
-                        QUERO LUCRAR COM BEM CASADOS
-                    </a>
-                 </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <script>
-        // --- SCRIPT PARA CARROSSEL ---
-        const track = document.querySelector('.carousel-track');
-        if (track) {
-            const slides = Array.from(track.children);
-            const nextButton = document.getElementById('nextBtn');
-            const prevButton = document.getElementById('prevBtn');
-            let slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
-            let currentIndex = 0;
-
-            const updateSlideWidth = () => {
-                slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
-            };
-
-            const moveToSlide = (targetIndex) => {
-                track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
-                currentIndex = targetIndex;
-            };
-
-            nextButton.addEventListener('click', () => {
-                let nextIndex = currentIndex + 1;
-                if (nextIndex >= slides.length) {
-                    nextIndex = 0; // Loop back to the start
-                }
-                moveToSlide(nextIndex);
-            });
-
-            prevButton.addEventListener('click', () => {
-                let prevIndex = currentIndex - 1;
-                if (prevIndex < 0) {
-                    prevIndex = slides.length - 1; // Loop to the end
-                }
-                moveToSlide(prevIndex);
-            });
-
-            window.addEventListener('resize', () => {
-                updateSlideWidth();
-                moveToSlide(currentIndex);
-            });
-            
-            updateSlideWidth();
-        }
-
-        // --- SCRIPT PARA FAQ ACORDEÃO ---
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
+    <!-- 🟪 Seção 5 – Oferta + Preço -->
+    <section id="oferta">
+        <div class="container">
+            <h2>Sua oportunidade de ouro está aqui! ✨</h2>
+            <div class="offer-box">
+                <p class="price-old">De R$197</p>
+                <p class="price-new"><span>por apenas</span> R$19,90 <span>(somente hoje!)</span></p>
                 
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                });
+                <ul class="offer-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Treinamento completo Bem Casados Lucrativos.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Planilha de precificação automática.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Modelos de contrato prontos.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Receitas exclusivas e testadas.</li>
+                </ul>
 
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            });
-        });
+                 <a href="#oferta" class="cta-button" style="margin-top: 40px;">SIM, QUERO COMEÇAR POR R$19,90</a>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 🟫 Seção 6 – Garantia 30 Dias -->
+    <section class="guarantee-section">
+        <div class="container">
+            <i class="fa-solid fa-shield-heart guarantee-icon"></i>
+            <h2>Sua Satisfação ou seu Dinheiro de Volta!</h2>
+            <p>Você tem 30 dias completos para testar o método. Se não acreditar que este treinamento pode te gerar pelo menos R$3.000 em renda extra, devolvemos seu dinheiro sem perguntas. Ou seja: você pode acessar todo o conteúdo sem risco nenhum.</p>
+            <a href="#oferta" class="cta-button">QUERO ACESSAR COM RISCO ZERO</a>
+        </div>
+    </section>
+
+    <!-- ⬛ Seção 7 – FAQ (Tira-Objeções) -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Ainda tem dúvidas? A gente responde!</h2>
+            <div class="faq-item">
+                <h3>❓ Preciso saber cozinhar?</h3>
+                <p>Não. Qualquer pessoa consegue seguir o passo a passo mesmo sem experiência.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ Preciso ter cozinha profissional?</h3>
+                <p>Não. Dá pra começar na cozinha da sua própria casa.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ Quanto posso faturar com isso?</h3>
+                <p>Nossas alunas já fizeram de R$3.000 a R$5.000 em apenas um final de semana.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ O curso é online?</h3>
+                <p>Sim. Você recebe acesso imediato, pode assistir do celular ou computador.</p>
+            </div>
+            <div class="faq-item">
+                <h3>❓ E se não funcionar pra mim?</h3>
+                <p>Você tem 30 dias de garantia para pedir seu reembolso sem burocracia.</p>
+            </div>
+             <a href="#oferta" class="cta-button">QUERO MINHA VAGA AGORA!</a>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 🟪 Seção Final – Reforço -->
+    <section class="final-call-section">
+        <div class="container">
+            <h2>👉 Casamentos acontecem toda semana. Você vai continuar de fora ou vai aproveitar essa oportunidade por apenas R$19,90?</h2>
+            <a href="#oferta" class="cta-button">➡️ QUERO LUCRAR COM BEM CASADOS</a>
+        </div>
+    </section>
+
+    <!-- Swiper JS (Para o Carrossel Funcionar) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Script de Inicialização do Swiper -->
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+            // quando a tela for >= 768px
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
+        }
+      });
     </script>
-
 </body>
 </html>
 

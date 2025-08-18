@@ -16,101 +16,88 @@
     <!-- Swiper JS (Carrossel de Provas) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
+    <!-- ✅ SCRIPTS ADICIONADOS ✅ -->
+
+    <!-- Script Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "r6sxt9hlrm");
+    </script>
+
+    <!-- Script UTMify -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3759254097738464');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3759254097738464&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
-        /* 🎨 PALETA DE CORES PASTEL E CONFIGURAÇÕES GLOBAIS 🎨 */
         :root {
-            --bg-rosa-pastel: #FEF7F9;
-            --rosa-destaque-suave: #E799B0;
-            --amarelo-creme-cta: #FDEEC9;
-            --texto-escuro: #5C524D;
-            --branco: #FFFFFF;
-            --sombra-suave: rgba(92, 82, 77, 0.08);
+            --bg-rosa-pastel: #FEF7F9; --rosa-destaque-suave: #E799B0; --amarelo-creme-cta: #FDEEC9;
+            --texto-escuro: #5C524D; --branco: #FFFFFF; --sombra-suave: rgba(92, 82, 77, 0.08);
         }
-
-        * {
-            margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-rosa-pastel);
+            font-family: 'Poppins', sans-serif; background-color: var(--bg-rosa-pastel);
             background-image: radial-gradient(rgba(231, 153, 176, 0.15) 1px, transparent 1px);
-            background-size: 16px 16px;
-            color: var(--texto-escuro);
-            line-height: 1.7;
-            overflow-x: hidden;
+            background-size: 16px 16px; color: var(--texto-escuro); line-height: 1.7; overflow-x: hidden;
         }
-
-        .container {
-            max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;
-        }
-        
-        /* ✅ ESTILO PARA A TARJA NO TOPO ✅ */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
         .top-banner {
-            background-color: var(--rosa-destaque-suave);
-            color: var(--branco);
-            text-align: center;
-            padding: 10px 20px;
-            font-weight: 700;
-            animation: pulse-banner 2.5s infinite ease-in-out;
+            background-color: var(--rosa-destaque-suave); color: var(--branco); text-align: center;
+            padding: 10px 20px; font-weight: 700; animation: pulse-banner 2.5s infinite ease-in-out;
         }
-        .top-banner p {
-            margin: 0;
-            font-size: 1rem;
-        }
-        .top-banner i {
-            margin-right: 8px;
-        }
+        .top-banner p { margin: 0; font-size: 1rem; }
+        .top-banner i { margin-right: 8px; }
         @keyframes pulse-banner {
-            0% { background-color: var(--rosa-destaque-suave); }
-            50% { background-color: #f0a0b9; }
+            0% { background-color: var(--rosa-destaque-suave); } 50% { background-color: #f0a0b9; }
             100% { background-color: var(--rosa-destaque-suave); }
         }
-
-        /* 🎀 ESTILO DOS BOTÕES (CTA) 🎀 */
         .cta-button {
             display: inline-block; padding: 18px 40px; margin-top: 25px;
             background-color: var(--amarelo-creme-cta); color: var(--texto-escuro);
-            font-size: 1.1rem; font-weight: 700; text-decoration: none;
-            border-radius: 50px; border: 2px solid rgba(0,0,0,0.05); cursor: pointer;
-            text-transform: uppercase; box-shadow: 0 4px 15px rgba(253, 238, 201, 0.8);
-            transition: all 0.3s ease;
+            font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 50px;
+            border: 2px solid rgba(0,0,0,0.05); cursor: pointer; text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(253, 238, 201, 0.8); transition: all 0.3s ease;
         }
-        .cta-button:hover {
-            transform: translateY(-5px); box-shadow: 0 8px 25px rgba(253, 238, 201, 1);
-        }
-        
-        /* 🍰 DETALHE DE DESIGN: DIVISÓRIA DE GLACÊ 🍰 */
+        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(253, 238, 201, 1); }
         .frosting-divider {
-            position: absolute; bottom: -1px; left: 0; width: 100%;
-            overflow: hidden; line-height: 0; transform: rotate(180deg);
+            position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden;
+            line-height: 0; transform: rotate(180deg);
         }
-        .frosting-divider svg {
-            position: relative; display: block; width: calc(100% + 1.3px); height: 70px;
-        }
+        .frosting-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
         .frosting-divider .shape-fill { fill: var(--bg-rosa-pastel); }
-        
-        /* 🧱 SEÇÕES 🧱 */
         section { padding: 40px 0; position: relative; }
-        .section-card {
-            background-color: var(--branco); border-radius: 20px;
-            box-shadow: 0 10px 40px var(--sombra-suave);
-        }
-        section h2 {
-            font-size: 2.5rem; margin-bottom: 30px; color: var(--texto-escuro); font-weight: 700;
-        }
+        .section-card { background-color: var(--branco); border-radius: 20px; box-shadow: 0 10px 40px var(--sombra-suave); }
+        section h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--texto-escuro); font-weight: 700; }
         .highlight-pink { color: var(--rosa-destaque-suave); }
-
-        /* 🟥 Seção 1 – LAYOUT FINAL DO HERO 🟥 */
-        .hero { 
-            padding-top: 25px; /* Padding reduzido para aproximar da tarja */
-            padding-bottom: 40px;
-            position: relative; overflow: hidden; 
-        }
+        .hero { padding-top: 25px; padding-bottom: 40px; position: relative; overflow: hidden; }
         .hero::before {
             content: '\f004'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg);
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
             font-size: 40rem; color: var(--branco); opacity: 0.5; z-index: 0;
         }
         .hero .container { position: relative; z-index: 1; }
@@ -121,57 +108,40 @@
         .vsl-label {
             display: inline-block; background-color: var(--rosa-destaque-suave);
             color: var(--branco); padding: 8px 25px; border-radius: 50px;
-            font-size: 0.9rem; font-weight: 700; margin-top: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem; font-weight: 700; margin-top: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         #ifr_689669ae49028fb3642cd405_wrapper {
-            max-width: 700px !important; margin: 15px auto 0 auto;
-            border-radius: 20px; overflow: hidden; border: 8px solid var(--branco);
+            max-width: 700px !important; margin: 15px auto 0 auto; border-radius: 20px;
+            overflow: hidden; border: 8px solid var(--branco);
             box-shadow: 0 10px 30px var(--sombra-suave), inset 0 0 0 2px var(--bg-rosa-pastel);
         }
-
-        /* 🟩 Seção 2 – Prova Social */
-        .proof-banner-wrapper {
-            width: 100%; margin-top: 40px;
-        }
-        .proof-banner {
-            width: 100%; max-width: 1000px; height: auto;
-            display: block; margin: 0 auto;
-        }
+        .proof-banner-wrapper { width: 100%; margin-top: 40px; }
+        .proof-banner { width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto; }
         .swiper { width: 100%; padding: 20px 0 40px 0; }
         .swiper-slide { width: 280px; }
         .swiper-slide img {
-            display: block; width: 100%; border-radius: 15px;
-            border: 5px solid var(--branco); box-shadow: 0 5px 20px var(--sombra-suave);
+            display: block; width: 100%; border-radius: 15px; border: 5px solid var(--branco);
+            box-shadow: 0 5px 20px var(--sombra-suave);
         }
-
-        /* 🟦 Seção 3 – O que você vai aprender */
         .learn-list {
             list-style: none; padding: 0; text-align: left; display: grid;
             grid-template-columns: 1fr; gap: 20px;
         }
         .learn-list li {
             background-color: var(--bg-rosa-pastel); padding: 20px; border-radius: 15px;
-            display: flex; align-items: center; gap: 20px;
-            font-size: 1.1rem; border: 1px solid #fdeff3;
+            display: flex; align-items: center; gap: 20px; font-size: 1.1rem; border: 1px solid #fdeff3;
         }
         .learn-list .icon-wrapper {
             background-color: var(--branco); border-radius: 50%; width: 60px;
-            height: 60px; flex-shrink: 0; display: flex;
-            align-items: center; justify-content: center;
+            height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
         }
         .learn-list i { font-size: 1.8rem; color: var(--rosa-destaque-suave); }
-
-        /* 🟪 Seção 4 – Oferta + Preço */
-        .offer-box {
-            border-radius: 30px; padding: 40px; border: 3px solid var(--amarelo-creme-cta);
-        }
+        .offer-box { border-radius: 30px; padding: 40px; border: 3px solid var(--amarelo-creme-cta); }
         .price-old { font-size: 1.5rem; text-decoration: line-through; opacity: 0.7; }
         .price-new { font-size: 3.5rem; font-weight: 700; margin: 10px 0; }
         .offer-today {
-            font-weight: 700; text-transform: uppercase;
-            color: var(--texto-escuro); margin-top: -5px;
-            margin-bottom: 25px;
+            font-weight: 700; text-transform: uppercase; color: var(--texto-escuro);
+            margin-top: -5px; margin-bottom: 25px;
         }
         .offer-list {
             list-style: none; padding: 0; text-align: left;
@@ -179,24 +149,16 @@
         }
         .offer-list li { margin-bottom: 15px; font-size: 1.1rem; }
         .offer-list i { color: var(--rosa-destaque-suave); margin-right: 10px; }
-
-        /* 🟫 Seção 5 – Garantia 30 Dias */
         .guarantee-icon { font-size: 5rem; color: var(--rosa-destaque-suave); margin-bottom: 20px; }
-        
-        /* ⬛ Seção 6 – FAQ */
         .faq-item {
             background-color: var(--bg-rosa-pastel); margin-bottom: 15px;
-            padding: 25px; border-radius: 20px; text-align: left;
-            border: 1px solid #fdeff3;
+            padding: 25px; border-radius: 20px; text-align: left; border: 1px solid #fdeff3;
         }
         .faq-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        
-        /* 🟪 Seção Final – Reforço */
         .final-call-section .cta-button { transform: scale(1.1); animation: pulse 2s infinite; }
         @keyframes pulse {
             0% { transform: scale(1.1); } 70% { transform: scale(1.2); } 100% { transform: scale(1.1); }
         }
-        
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             section h2 { font-size: 2rem; }
@@ -207,12 +169,10 @@
 </head>
 <body>
 
-    <!-- ✅ TARJA ADICIONADA NO TOPO DA PÁGINA ✅ -->
     <div class="top-banner">
         <p><i class="fa-solid fa-clock"></i> Oferta disponível só até hoje</p>
     </div>
 
-    <!-- 🟥 Seção 1 – Headline + Hero com VSL -->
     <section class="hero">
         <div class="container">
             <div class="logo-container">
@@ -222,11 +182,10 @@
             <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
             <div class="vsl-label">👇 Assista o vídeo e entenda como 👇</div>
             <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_689669ae49028fb3642cd405_wrapper"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
-            <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
+            <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
         </div>
     </section>
 
-    <!-- 🟩 Seção 2 – Prova Social -->
     <section class="social-proof">
         <div class="container">
             <h2>Elas confiaram e já estão lucrando! 🍰</h2>
@@ -240,14 +199,13 @@
                     <div class="swiper-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento de aluna"></div>
                 </div>
             </div>
-            <a href="#oferta" class="cta-button">EU QUERO SER A PRÓXIMA!</a>
+            <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">EU QUERO SER A PRÓXIMA!</a>
         </div>
         <div class="proof-banner-wrapper">
             <img src="https://i.imgur.com/m51JaRR.jpeg" alt="Depoimentos e resultados das alunas" class="proof-banner">
         </div>
     </section>
 
-    <!-- 🟦 Seção 3 – O que você vai aprender -->
     <section>
         <div class="container section-card">
             <h2>O que você vai aprender na prática:</h2>
@@ -258,11 +216,10 @@
                 <li><div class="icon-wrapper"><i class="fa-solid fa-file-signature"></i></div> <span>Estratégias simples para fechar contratos de <span class="highlight-pink">R$3.000 a R$5.000</span> em um único evento.</span></li>
                 <li><div class="icon-wrapper"><i class="fa-solid fa-star"></i></div> <span>Receitas exclusivas que deixam os clientes pedindo mais.</span></li>
             </ul>
-            <a href="#oferta" class="cta-button">QUERO APRENDER TUDO ISSO!</a>
+            <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">QUERO APRENDER TUDO ISSO!</a>
         </div>
     </section>
 
-    <!-- 🟪 Seção 4 – Oferta + Preço -->
     <section id="oferta">
         <div class="container section-card offer-box">
             <h2>Sua oportunidade de ouro está aqui! ✨</h2>
@@ -276,7 +233,7 @@
                 <li><i class="fa-solid fa-check-circle"></i> Modelos de contrato prontos.</li>
                 <li><i class="fa-solid fa-check-circle"></i> Receitas exclusivas e testadas.</li>
             </ul>
-             <a href="#oferta" class="cta-button" style="margin-top: 40px;">SIM, QUERO COMEÇAR POR R$19,90</a>
+             <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button" style="margin-top: 40px;">SIM, QUERO COMEÇAR POR R$19,90</a>
         </div>
         <div class="frosting-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -285,17 +242,15 @@
         </div>
     </section>
 
-    <!-- 🟫 Seção 5 – Garantia 30 Dias -->
     <section class="guarantee-section">
         <div class="container section-card">
             <i class="fa-solid fa-shield-heart guarantee-icon"></i>
             <h2>Sua Satisfação ou seu Dinheiro de Volta!</h2>
             <p>Você tem 30 dias completos para testar o método. Se não acreditar que este treinamento pode te gerar pelo menos <span class="highlight-pink">R$3.000 em renda extra</span>, devolvemos seu dinheiro sem perguntas. Ou seja: você pode acessar todo o conteúdo sem risco nenhum.</p>
-            <a href="#oferta" class="cta-button">QUERO ACESSAR COM RISCO ZERO</a>
+            <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">QUERO ACESSAR COM RISCO ZERO</a>
         </div>
     </section>
 
-    <!-- ⬛ Seção 6 – FAQ (Tira-Objeções) -->
     <section>
         <div class="container section-card">
             <h2>Ainda tem dúvidas? A gente responde!</h2>
@@ -319,35 +274,23 @@
                 <h3>❓ E se não funcionar pra mim?</h3>
                 <p>Você tem 30 dias de garantia para pedir seu reembolso sem burocracia.</p>
             </div>
-             <a href="#oferta" class="cta-button">QUERO MINHA VAGA AGORA!</a>
+             <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">QUERO MINHA VAGA AGORA!</a>
         </div>
     </section>
 
-    <!-- 🟪 Seção Final – Reforço -->
     <section class="final-call-section">
         <div class="container">
             <h2>👉 Casamentos acontecem toda semana. Você vai continuar de fora ou vai aproveitar essa oportunidade por apenas <span class="highlight-pink">R$19,90</span>?</h2>
-            <a href="#oferta" class="cta-button">➡️ QUERO LUCRAR COM BEM CASADOS</a>
+            <a href="https://checkout.novopagamento.site/VCCL1O8SC34L" class="cta-button">➡️ QUERO LUCRAR COM BEM CASADOS</a>
         </div>
     </section>
 
-    <!-- Swiper JS (Para o Carrossel Funcionar) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- Script para Carrossel -->
     <script>
       const swiper = new Swiper('.swiper', {
-        loop: true,
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-            768: { slidesPerView: 3, spaceBetween: 30 }
-        }
+        loop: true, slidesPerView: 'auto', spaceBetween: 20, centeredSlides: true,
+        autoplay: { delay: 2500, disableOnInteraction: false, },
+        breakpoints: { 768: { slidesPerView: 3, spaceBetween: 30 } }
       });
     </script>
 </body>

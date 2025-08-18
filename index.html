@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
     <style>
-        /* 🎨 NOVA PALETA DE CORES PASTEL E CONFIGURAÇÕES GLOBAIS 🎨 */
+        /* 🎨 PALETA DE CORES PASTEL E CONFIGURAÇÕES GLOBAIS 🎨 */
         :root {
             --bg-rosa-pastel: #FEF7F9;
-            --rosa-destaque-suave: #E799B0; /* Tom de 'dusty rose' */
+            --rosa-destaque-suave: #E799B0;
             --amarelo-creme-cta: #FDEEC9;
             --texto-escuro: #5C524D;
             --branco: #FFFFFF;
@@ -44,12 +44,12 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 800px; /* Largura padrão para conteúdo centralizado */
             margin: 0 auto;
             padding: 20px;
             text-align: center;
         }
-
+        
         /* 🎀 ESTILO DOS BOTÕES (CTA) 🎀 */
         .cta-button {
             display: inline-block;
@@ -75,8 +75,7 @@
         
         /* 🍰 DETALHE DE DESIGN: DIVISÓRIA DE GLACÊ 🍰 */
         .frosting-divider {
-            position: absolute;
-            bottom: -1px; left: 0; width: 100%;
+            position: absolute; bottom: -1px; left: 0; width: 100%;
             overflow: hidden; line-height: 0; transform: rotate(180deg);
         }
         .frosting-divider svg {
@@ -94,8 +93,6 @@
             background-color: var(--branco);
             border-radius: 20px;
             box-shadow: 0 10px 40px var(--sombra-suave);
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         section h2 {
@@ -108,7 +105,7 @@
             color: var(--rosa-destaque-suave);
         }
 
-        /* 🟥 Seção 1 – NOVO LAYOUT DO HERO 🟥 */
+        /* 🟥 Seção 1 – LAYOUT FINAL DO HERO 🟥 */
         .hero {
             padding: 40px 0;
             position: relative;
@@ -130,20 +127,9 @@
         .hero .container {
             position: relative;
             z-index: 1;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        .hero-text {
-            flex: 1;
-            text-align: left;
-        }
-        .hero-video {
-            flex: 1;
-            max-width: 450px;
         }
         .logo-container {
-            margin-bottom: 15px; /* Espaço reduzido */
+            margin-bottom: 15px;
         }
         .logo-container img {
             max-width: 150px;
@@ -156,10 +142,13 @@
         }
         .hero p {
             font-size: 1.1rem;
-            margin-bottom: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #ifr_689669ae49028fb3642cd405_wrapper {
-            width: 100%;
+            max-width: 700px !important;
+            margin: 30px auto 0 auto;
             border-radius: 20px;
             overflow: hidden;
             border: 8px solid var(--branco);
@@ -169,14 +158,12 @@
 
         /* 🟩 Seção 2 – Prova Social */
         .swiper {
-            width: 100%;
-            padding: 20px 0 40px 0;
+            width: 100%; padding: 20px 0 40px 0;
         }
         .swiper-slide { width: 280px; }
         .swiper-slide img {
             display: block; width: 100%;
-            border-radius: 15px;
-            border: 5px solid var(--branco);
+            border-radius: 15px; border: 5px solid var(--branco);
             box-shadow: 0 5px 20px var(--sombra-suave);
         }
 
@@ -195,13 +182,11 @@
         }
         .learn-list .icon-wrapper {
             background-color: var(--branco);
-            border-radius: 50%; width: 60px;
-            height: 60px; flex-shrink: 0;
+            border-radius: 50%; width: 60px; height: 60px; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
         }
         .learn-list i {
-            font-size: 1.8rem;
-            color: var(--rosa-destaque-suave);
+            font-size: 1.8rem; color: var(--rosa-destaque-suave);
         }
 
         /* 🟪 Seção 4 – Oferta + Preço */
@@ -210,13 +195,10 @@
             border: 3px solid var(--amarelo-creme-cta);
         }
         .price-old {
-            font-size: 1.5rem;
-            text-decoration: line-through;
-            opacity: 0.7;
+            font-size: 1.5rem; text-decoration: line-through; opacity: 0.7;
         }
         .price-new {
-            font-size: 3.5rem;
-            font-weight: 700; margin: 10px 0;
+            font-size: 3.5rem; font-weight: 700; margin: 10px 0;
         }
         .offer-list {
             list-style: none; padding: 0; text-align: left;
@@ -239,8 +221,7 @@
         
         /* 🟪 Seção Final – Reforço */
         .final-call-section .cta-button {
-            transform: scale(1.1);
-            animation: pulse 2s infinite;
+            transform: scale(1.1); animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1.1); }
@@ -248,13 +229,6 @@
             100% { transform: scale(1.1); }
         }
         
-        /* RESPONSIVIDADE */
-        @media (max-width: 992px) {
-            .hero .container { flex-direction: column; }
-            .hero-text { text-align: center; }
-            .hero-video { max-width: 600px; margin-top: 30px; }
-            .hero h1 { font-size: 2.2rem; }
-        }
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             section h2 { font-size: 2rem; }
@@ -269,18 +243,16 @@
     <!-- 🟥 Seção 1 – Headline + Hero com VSL -->
     <section class="hero">
         <div class="container">
-            <div class="hero-text">
-                <div class="logo-container">
-                    <img src="https://i.imgur.com/G5c78eU.png" alt="Bem Casados Lucrativos Logo">
-                </div>
-                <h1>Transforme o docinho mais famoso dos casamentos – o <span class="highlight-pink">Bem Casado</span> – em até <span class="highlight-pink">R$3.000 de lucro</span> em um único final de semana.</h1>
-                <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
-                <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
+            <div class="logo-container">
+                <img src="https://i.imgur.com/G5c78eU.png" alt="Bem Casados Lucrativos Logo">
             </div>
-            <div class="hero-video">
-                <!-- SEU CÓDIGO EMBED DA VSL -->
-                <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_689669ae49028fb3642cd405_wrapper"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
-            </div>
+            <h1>Transforme o docinho mais famoso dos casamentos – o <span class="highlight-pink">Bem Casado</span> – em até <span class="highlight-pink">R$3.000 de lucro</span> em um único final de semana.</h1>
+            <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
+            
+            <!-- ✅ VSL POSICIONADA CORRETAMENTE ABAIXO DO TEXTO ✅ -->
+            <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_689669ae49028fb3642cd405_wrapper"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+
+            <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
         </div>
     </section>
 

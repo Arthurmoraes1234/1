@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Bem Casados Lucrativos</title>
+    <title>Bem Casados Lucrativos</title>
+    
+    <!-- Fontes e Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
     <style>
-        /* --- RESET E CONFIGURAÇÕES GERAIS --- */
+        /* --- 🧱 Especificações e Configurações Globais 🔥 --- */
         :root {
-            --color-primary: #EAB2A0; /* Rosa queimado */
-            --color-secondary: #D4E2D4; /* Verde sálvia suave */
-            --color-background: #FAF8F1; /* Creme/Bege claro */
-            --color-text: #4A403A; /* Marrom escuro */
-            --color-accent: #FFB703; /* Amarelo/Laranja para CTAs */
-            --color-white: #FFFFFF;
-            --font-headings: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
+            --color-background: #F5EFE6; /* Fundo bege claro */
+            --color-card: #2E282A;      /* Cor escura para os painéis */
+            --color-text: #FFFFFF;        /* Textos padrão cor branca */
+            --color-highlight: #C75B7B; /* Textos destaques cor rosa escuro */
+            --color-cta: #FFB703;         /* Amarelo/Laranja para botões */
+            --font-main: 'Poppins', sans-serif;
         }
 
         * {
@@ -31,32 +33,36 @@
         }
 
         body {
-            font-family: var(--font-body);
+            font-family: var(--font-main);
             background-color: var(--color-background);
             color: var(--color-text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 400; /* Regular */
         }
 
-        /* --- UTILITÁRIOS E COMPONENTES --- */
+        /* --- Componentes e Utilitários --- */
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        section:nth-child(even) {
-            background-color: var(--color-white);
+            padding: 50px 0;
         }
 
+        .card {
+            background-color: var(--color-card);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
         .section-title {
-            font-family: var(--font-headings);
             font-size: 2.5rem;
-            color: var(--color-primary);
+            font-weight: 700; /* Bold */
+            color: var(--color-highlight);
             margin-bottom: 30px;
             position: relative;
             display: inline-block;
@@ -65,23 +71,32 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 50px;
             height: 3px;
-            background-color: var(--color-secondary);
+            background-color: var(--color-highlight);
             margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .highlight {
+            color: var(--color-highlight);
+            font-weight: 700; /* Bold */
         }
 
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(145deg, #f7d08a, var(--color-accent));
-            color: var(--color-text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--color-cta);
+            color: var(--color-card);
             padding: 15px 35px;
             border-radius: 50px;
-            font-weight: 700;
+            font-weight: 700; /* Bold */
             text-decoration: none;
             font-size: 1.1rem;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
@@ -89,65 +104,62 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        /* --- SEÇÃO 1: HERO --- */
-        .hero {
-            background: linear-gradient(rgba(250, 248, 241, 0.8), rgba(250, 248, 241, 0.8)), url('https://images.unsplash.com/photo-1587351177721-a549116a8157?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-            padding: 80px 0;
-        }
-
-        .logo {
-            font-family: var(--font-headings);
-            font-size: 2.5rem;
-            color: var(--color-primary);
-            margin-bottom: 40px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
         
-        .logo span {
-            font-size: 1.2rem;
-            font-family: var(--font-body);
-            display: block;
-            color: var(--color-text);
-            letter-spacing: 2px;
-            margin-top: -10px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-headings);
-            font-size: 2.8rem;
-            line-height: 1.2;
-            color: var(--color-text);
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .hero .video-prompt {
-            font-weight: 500;
-            color: var(--color-primary);
-        }
-
-        .hero .cta-button-section {
+        .cta-button-section {
             margin-top: 40px;
         }
 
-        /* --- SEÇÃO 2: VSL --- */
+        /* --- 🟥 Seção 1: Hero --- */
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--color-card);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .logo span {
+            color: var(--color-highlight);
+        }
+
+        .hero .card {
+            background: linear-gradient(135deg, #3a3234, var(--color-card));
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .hero .video-prompt {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* --- 🟧 Seção 2: VSL --- */
         .vsl-container {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* Proporção 16:9 */
-            background-color: #eee;
-            border: 2px dashed var(--color-primary);
+            aspect-ratio: 16 / 9;
+            background-color: #1a1a1a;
             border-radius: 10px;
             margin-bottom: 40px;
             overflow: hidden;
+            border: 2px solid var(--color-highlight);
         }
         
         .vsl-container .placeholder {
@@ -168,7 +180,7 @@
             border: 0;
         }
 
-        /* --- SEÇÃO 3: PROVA SOCIAL --- */
+        /* --- 🟩 Seção 3: Prova Social --- */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -181,14 +193,16 @@
         }
 
         .carousel-slide {
-            min-width: 33.33%;
+            min-width: 100%;
             padding: 0 10px;
         }
         
         .carousel-slide img {
             width: 100%;
+            max-width: 300px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
 
         .carousel-buttons {
@@ -196,72 +210,58 @@
         }
 
         .carousel-btn {
-            background-color: var(--color-primary);
+            background-color: var(--color-highlight);
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.2rem;
             margin: 0 10px;
             transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .carousel-btn:hover {
-            background-color: #d49a87;
-        }
-        
-        .social-proof .cta-button-section {
-            margin-top: 40px;
+            background-color: #ad4968;
         }
 
-        /* --- SEÇÃO 4: O QUE VAI APRENDER --- */
+        /* --- 🟦 Seção 4: O que você vai aprender --- */
         .learning-list {
             list-style: none;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 550px;
+            margin: 30px auto 0;
             text-align: left;
         }
 
         .learning-list li {
             font-size: 1.1rem;
-            padding: 15px 0 15px 40px;
+            padding: 15px 0 15px 45px;
             position: relative;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .learning-list li:last-child {
             border-bottom: none;
         }
 
-        .learning-list li::before {
-            content: '👉';
+        .learning-list li .iconify {
             position: absolute;
             left: 0;
             top: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .learning .cta-button-section {
-            margin-top: 40px;
+            font-size: 1.8rem;
+            color: var(--color-highlight);
         }
 
-        /* --- SEÇÃO 5: OFERTA --- */
-        #oferta {
-            background-color: #fffaf0; /* Um pouco mais quente que o fundo */
-            border-top: 2px solid var(--color-primary);
-            border-bottom: 2px solid var(--color-primary);
+        /* --- 🟪 Seção 5: Oferta --- */
+        #oferta .card {
+            border: 2px solid var(--color-cta);
         }
         
-        .price-box {
-            background-color: var(--color-white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
         .price-box .old-price {
             font-size: 1.5rem;
             text-decoration: line-through;
@@ -269,11 +269,12 @@
         }
 
         .price-box .new-price {
-            font-family: var(--font-headings);
+            font-family: 'Poppins', sans-serif;
             font-size: 4rem;
-            color: var(--color-primary);
-            margin: 10px 0;
+            color: var(--color-cta);
+            margin: 5px 0;
             line-height: 1;
+            font-weight: 700;
         }
         
         .price-box .price-condition {
@@ -290,51 +291,54 @@
         }
         
         .offer-list li {
-            padding: 8px 0 8px 30px;
+            padding: 8px 0 8px 35px;
             position: relative;
+            display: flex;
+            align-items: center;
         }
 
-        .offer-list li::before {
-            content: '✔';
+        .offer-list li .iconify {
             position: absolute;
             left: 0;
-            color: var(--color-secondary);
-            font-weight: bold;
+            color: var(--color-cta);
+            font-size: 1.5rem;
+        }
+        
+        #oferta .cta-button {
+            transform: scale(1.1);
         }
 
-        /* --- SEÇÃO 6: GARANTIA --- */
+        /* --- 🟫 Seção 6: Garantia --- */
         .guarantee-box {
-            border: 2px dashed var(--color-secondary);
+            border: 2px dashed var(--color-highlight);
             padding: 30px;
-            max-width: 600px;
-            margin: 30px auto 0;
+            margin-top: 30px;
             border-radius: 10px;
         }
         
-        .guarantee-box img {
-            width: 80px;
-            margin-bottom: 20px;
+        .guarantee-box .iconify {
+            font-size: 4rem;
+            color: var(--color-highlight);
+            margin-bottom: 15px;
         }
 
         .guarantee-box p {
             font-size: 1.1rem;
-            font-style: italic;
         }
         
-        .guarantee .cta-button-section {
-            margin-top: 40px;
-        }
-
-
-        /* --- SEÇÃO 7: FAQ --- */
+        /* --- ⬛ Seção 7: FAQ --- */
         .faq-container {
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin-top: 30px;
             text-align: left;
         }
 
         .faq-item {
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .faq-item:first-child {
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .faq-question {
@@ -342,24 +346,30 @@
             background: none;
             border: none;
             text-align: left;
-            padding: 20px;
+            padding: 20px 0;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             position: relative;
             color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
+        .faq-question .iconify:last-child {
+            margin-left: auto;
             font-size: 1.5rem;
-            color: var(--color-primary);
+            color: var(--color-highlight);
             transition: transform 0.3s ease;
         }
+        
+        .faq-question .iconify:first-child {
+            font-size: 1.5rem;
+            color: var(--color-text);
+        }
 
-        .faq-item.active .faq-question::after {
+        .faq-item.active .faq-question .iconify:last-child {
             transform: rotate(45deg);
         }
 
@@ -367,58 +377,46 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            padding: 0 20px;
+            padding: 0 0 0 40px;
         }
         
         .faq-answer p {
             padding-bottom: 20px;
+            opacity: 0.9;
         }
         
-        .faq .cta-button-section {
-            margin-top: 40px;
-        }
-        
-        /* --- SEÇÃO FINAL --- */
-        .final-call {
-            background-color: var(--color-primary);
+        /* --- 🟪 Seção Final: Reforço --- */
+        .final-call .card {
+            background-color: var(--color-highlight);
         }
         
         .final-call h2 {
-            font-family: var(--font-headings);
-            font-size: 2.2rem;
-            color: var(--color-white);
-            max-width: 700px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-text);
             margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .final-call .cta-button {
             transform: scale(1.1);
-            background: var(--color-white);
+            background: var(--color-text);
+            color: var(--color-card);
         }
         
         .final-call .cta-button:hover {
-            transform: scale(1.15);
-            background: #fff5e6;
+            background: var(--color-background);
         }
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .section-title { font-size: 2rem; }
-            
-            .carousel-slide {
-                min-width: 50%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
-            .section-title { font-size: 1.8rem; }
-            
-            .carousel-slide {
-                min-width: 100%;
-            }
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 2.2rem; }
+            .card { padding: 30px; }
+            .final-call h2 { font-size: 1.5rem; }
         }
 
     </style>
@@ -430,15 +428,23 @@
         <!-- 🟥 Seção 1 – Headline + Hero -->
         <section class="hero">
             <div class="container">
-                <div class="logo">
-                    Bem Casados
-                    <span>L U C R A T I V O S</span>
-                </div>
-                <h1>👉 “Transforme o docinho mais famoso dos casamentos – o Bem Casado – em até R$3.000 de lucro em um único final de semana (mesmo sem nunca ter vendido nada antes).”</h1>
-                <p>“Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.”</p>
-                <p class="video-prompt"><strong>Veja o vídeo e entenda tudo!</strong></p>
-                <div class="cta-button-section">
-                    <a href="#oferta" class="cta-button">Quero Descobrir o Segredo</a>
+                <div class="logo">Bem Casados <span>Lucrativos</span></div>
+                <div class="card">
+                    <h1>
+                        <iconify-icon icon="mdi:hand-pointing-right" style="color: var(--color-highlight);"></iconify-icon>
+                        “Transforme o docinho mais famoso dos casamentos – o <span class="highlight">Bem Casado</span> – em até <span class="highlight">R$3.000 de lucro</span> em um único final de semana (mesmo sem nunca ter vendido nada antes).”
+                    </h1>
+                    <p>“Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.”</p>
+                    <p class="video-prompt">
+                        <iconify-icon icon="mdi:play-circle-outline"></iconify-icon>
+                        Veja o vídeo e entenda tudo!
+                    </p>
+                    <div class="cta-button-section">
+                        <a href="#oferta" class="cta-button">
+                            <iconify-icon icon="mdi:cake-variant"></iconify-icon>
+                            Quero Descobrir o Método
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -446,39 +452,45 @@
         <!-- 🟧 Seção 2 – História da Expert (VSL) -->
         <section class="vsl">
             <div class="container">
-                <div class="vsl-container">
-                    <!-- 
-                        COLOQUE SEU CÓDIGO DE EMBED DO VÍDEO AQUI
-                        Exemplo do YouTube: <iframe src="https://www.youtube.com/embed/SEU_CÓDIGO_AQUI" ...></iframe>
-                        Exemplo do Vimeo: <iframe src="https://player.vimeo.com/video/SEU_CÓDIGO_AQUI" ...></iframe>
-                    -->
-                    <div class="placeholder">ESPAÇO RESERVADO PARA O SEU VÍDEO</div>
+                <div class="card">
+                    <div class="vsl-container">
+                        <!-- 
+                            COLE SEU CÓDIGO DE EMBED DO VÍDEO AQUI
+                            Exemplo YouTube: <iframe src="https://www.youtube.com/embed/SEU_CÓDIGO_AQUI" ...></iframe>
+                        -->
+                        <div class="placeholder">ESPAÇO RESERVADO PARA O SEU VÍDEO</div>
+                    </div>
+                    <a href="#oferta" class="cta-button">
+                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
+                        QUERO COMEÇAR AGORA POR R$19,90
+                    </a>
                 </div>
-                <a href="#oferta" class="cta-button">➡️ QUERO COMEÇAR AGORA POR R$19,90</a>
             </div>
         </section>
 
         <!-- 🟩 Seção 3 – Prova Social -->
         <section class="social-proof">
             <div class="container">
-                <h2 class="section-title">Elas transformaram a cozinha de casa em uma fonte de renda</h2>
-                <div class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento 1"></div>
-                        <div class="carousel-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento 2"></div>
-                        <div class="carousel-slide"><img src="https://i.imgur.com/tGgft6E.png" alt="Depoimento 3"></div>
-                        <div class="carousel-slide"><img src="https://i.imgur.com/8QnKyLd.png" alt="Depoimento 4"></div>
-                        <!-- Repetindo para o carrossel infinito -->
-                        <div class="carousel-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento 1"></div>
-                        <div class="carousel-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento 2"></div>
+                <div class="card">
+                    <h2 class="section-title">Elas já estão lucrando!</h2>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide"><img src="https://i.imgur.com/3QeCpq5.png" alt="Depoimento 1"></div>
+                            <div class="carousel-slide"><img src="https://i.imgur.com/fNxmdSt.png" alt="Depoimento 2"></div>
+                            <div class="carousel-slide"><img src="https://i.imgur.com/tGgft6E.png" alt="Depoimento 3"></div>
+                            <div class="carousel-slide"><img src="https://i.imgur.com/8QnKyLd.png" alt="Depoimento 4"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-buttons">
-                    <button class="carousel-btn" id="prevBtn">❮</button>
-                    <button class="carousel-btn" id="nextBtn">❯</button>
-                </div>
-                <div class="cta-button-section">
-                    <a href="#oferta" class="cta-button">Eu quero ser a próxima!</a>
+                    <div class="carousel-buttons">
+                        <button class="carousel-btn" id="prevBtn"><iconify-icon icon="mdi:chevron-left"></iconify-icon></button>
+                        <button class="carousel-btn" id="nextBtn"><iconify-icon icon="mdi:chevron-right"></iconify-icon></button>
+                    </div>
+                    <div class="cta-button-section">
+                        <a href="#oferta" class="cta-button">
+                             <iconify-icon icon="mdi:star-circle-outline"></iconify-icon>
+                            Eu quero ser a próxima!
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -486,16 +498,21 @@
         <!-- 🟦 Seção 4 – O que você vai aprender -->
         <section class="learning">
             <div class="container">
-                <h2 class="section-title">O passo a passo para o seu sucesso</h2>
-                <ul class="learning-list">
-                    <li>Como produzir bem casados profissionais em casa, com utensílios básicos.</li>
-                    <li>O segredo para conseguir clientes toda semana (sem depender de rede social).</li>
-                    <li>Como calcular preço e garantir margens de 200% de lucro.</li>
-                    <li>Estratégias simples para fechar contratos de R$3.000 a R$5.000 em um único evento.</li>
-                    <li>Receitas exclusivas que deixam os clientes pedindo mais.</li>
-                </ul>
-                <div class="cta-button-section">
-                    <a href="#oferta" class="cta-button">Quero aprender tudo isso agora!</a>
+                <div class="card">
+                    <h2 class="section-title">O que você vai dominar</h2>
+                    <ul class="learning-list">
+                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Como produzir bem casados profissionais em casa, com utensílios básicos.</li>
+                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>O segredo para conseguir clientes toda semana (sem depender de rede social).</li>
+                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Como calcular preço e garantir margens de 200% de lucro.</li>
+                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Estratégias simples para fechar contratos de R$3.000 a R$5.000 em um único evento.</li>
+                        <li><iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>Receitas exclusivas que deixam os clientes pedindo mais.</li>
+                    </ul>
+                    <div class="cta-button-section">
+                        <a href="#oferta" class="cta-button">
+                            <iconify-icon icon="mdi:school-outline"></iconify-icon>
+                            Quero aprender tudo isso
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -503,21 +520,24 @@
         <!-- 🟪 Seção 5 – Oferta + Preço -->
         <section id="oferta">
             <div class="container">
-                <h2 class="section-title">Sua Oportunidade Única Está Aqui</h2>
-                <div class="price-box">
+                <div class="card price-box">
+                    <h2 class="section-title">Sua Oportunidade Única</h2>
                     <p class="old-price">De R$197</p>
                     <p class="new-price">por apenas R$19,90</p>
                     <p class="price-condition">(somente hoje!)</p>
                     
                     <h3>Você recebe acesso imediato a tudo isso:</h3>
                     <ul class="offer-list">
-                        <li>Treinamento completo Bem Casados Lucrativos.</li>
-                        <li>Planilha de precificação automática.</li>
-                        <li>Modelos de contrato prontos.</li>
-                        <li>Receitas exclusivas e testadas.</li>
+                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Treinamento completo Bem Casados Lucrativos.</li>
+                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Planilha de precificação automática.</li>
+                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Modelos de contrato prontos.</li>
+                        <li><iconify-icon icon="mdi:check-circle"></iconify-icon>Receitas exclusivas e testadas.</li>
                     </ul>
 
-                    <a href="#" class="cta-button">➡️ SIM, QUERO COMEÇAR POR R$19,90</a>
+                    <a href="#" class="cta-button">
+                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
+                        SIM, QUERO COMEÇAR POR R$19,90
+                    </a>
                 </div>
             </div>
         </section>
@@ -525,13 +545,18 @@
         <!-- 🟫 Seção 6 – Garantia 30 Dias -->
         <section class="guarantee">
             <div class="container">
-                 <h2 class="section-title">Seu Risco é Zero</h2>
-                 <div class="guarantee-box">
-                    <img src="https://api.iconify.design/mdi:shield-check.svg?color=%23eab2a0" alt="Selo de Garantia">
-                    <p>“Você tem 30 dias completos para testar o método. Se não acreditar que este treinamento pode te gerar pelo menos R$3.000 em renda extra, devolvemos seu dinheiro sem perguntas. Ou seja: você pode acessar todo o conteúdo sem risco nenhum.”</p>
-                 </div>
-                 <div class="cta-button-section">
-                    <a href="#oferta" class="cta-button">Quero começar sem riscos!</a>
+                 <div class="card">
+                    <h2 class="section-title">Seu Risco é Zero</h2>
+                    <div class="guarantee-box">
+                        <iconify-icon icon="mdi:shield-check"></iconify-icon>
+                        <p>“Você tem 30 dias completos para testar o método. Se não acreditar que este treinamento pode te gerar pelo menos R$3.000 em renda extra, devolvemos seu dinheiro sem perguntas. Ou seja: você pode acessar todo o conteúdo sem risco nenhum.”</p>
+                    </div>
+                    <div class="cta-button-section">
+                        <a href="#oferta" class="cta-button">
+                            <iconify-icon icon="mdi:lock-open-variant-outline"></iconify-icon>
+                            Quero começar sem riscos
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -539,41 +564,66 @@
         <!-- ⬛ Seção 7 – FAQ -->
         <section class="faq">
             <div class="container">
-                <h2 class="section-title">Perguntas Frequentes</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">❓ Preciso saber cozinhar?</button>
-                        <div class="faq-answer">
-                            <p>➡️ Não. Qualquer pessoa consegue seguir o passo a passo mesmo sem experiência.</p>
+                <div class="card">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <iconify-icon icon="mdi:chef-hat"></iconify-icon>
+                                Preciso saber cozinhar?
+                                <iconify-icon icon="mdi:plus"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Não. Qualquer pessoa consegue seguir o passo a passo mesmo sem experiência.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <iconify-icon icon="mdi:home-kitchen"></iconify-icon>
+                                Preciso ter cozinha profissional?
+                                <iconify-icon icon="mdi:plus"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Não. Dá pra começar na cozinha da sua própria casa.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <iconify-icon icon="mdi:cash-multiple"></iconify-icon>
+                                Quanto posso faturar com isso?
+                                <iconify-icon icon="mdi:plus"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Nossas alunas já fizeram de R$3.000 a R$5.000 em apenas um final de semana.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <iconify-icon icon="mdi:laptop"></iconify-icon>
+                                O curso é online?
+                                <iconify-icon icon="mdi:plus"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sim. Você recebe acesso imediato, pode assistir do celular ou computador.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <iconify-icon icon="mdi:hand-heart-outline"></iconify-icon>
+                                E se não funcionar pra mim?
+                                <iconify-icon icon="mdi:plus"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Você tem 30 dias de garantia para pedir seu reembolso sem burocracia.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">❓ Preciso ter cozinha profissional?</button>
-                        <div class="faq-answer">
-                            <p>➡️ Não. Dá pra começar na cozinha da sua própria casa.</p>
-                        </div>
+                     <div class="cta-button-section">
+                        <a href="#oferta" class="cta-button">
+                            <iconify-icon icon="mdi:check-all"></iconify-icon>
+                            Estou decidida!
+                        </a>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-question">❓ Quanto posso faturar com isso?</button>
-                        <div class="faq-answer">
-                            <p>➡️ Nossas alunas já fizeram de R$3.000 a R$5.000 em apenas um final de semana.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">❓ O curso é online?</button>
-                        <div class="faq-answer">
-                            <p>➡️ Sim. Você recebe acesso imediato, pode assistir do celular ou computador.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">❓ E se não funcionar pra mim?</button>
-                        <div class="faq-answer">
-                            <p>➡️ Você tem 30 dias de garantia para pedir seu reembolso sem burocracia.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="cta-button-section">
-                    <a href="#oferta" class="cta-button">Não tenho mais dúvidas!</a>
                 </div>
             </div>
         </section>
@@ -581,8 +631,16 @@
         <!-- 🟪 Seção Final – Reforço -->
         <section class="final-call">
             <div class="container">
-                 <h2>👉 “Casamentos acontecem toda semana. Você vai continuar de fora ou vai aproveitar essa oportunidade por apenas R$19,90?”</h2>
-                 <a href="#oferta" class="cta-button">➡️ QUERO LUCRAR COM BEM CASADOS</a>
+                 <div class="card">
+                    <h2>
+                        <iconify-icon icon="mdi:hand-pointing-right"></iconify-icon>
+                        “Casamentos acontecem toda semana. Você vai continuar de fora ou vai aproveitar essa oportunidade por apenas R$19,90?”
+                    </h2>
+                     <a href="#oferta" class="cta-button">
+                        <iconify-icon icon="mdi:arrow-right-thin"></iconify-icon>
+                        QUERO LUCRAR COM BEM CASADOS
+                    </a>
+                 </div>
             </div>
         </section>
 
@@ -591,40 +649,45 @@
     <script>
         // --- SCRIPT PARA CARROSSEL ---
         const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.getElementById('nextBtn');
-        const prevButton = document.getElementById('prevBtn');
-        const slideWidth = slides[0].getBoundingClientRect().width;
+        if (track) {
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('nextBtn');
+            const prevButton = document.getElementById('prevBtn');
+            let slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+            let currentIndex = 0;
 
-        let currentIndex = 0;
+            const updateSlideWidth = () => {
+                slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+            };
 
-        function updateCarousel() {
-            track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+            const moveToSlide = (targetIndex) => {
+                track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+                currentIndex = targetIndex;
+            };
+
+            nextButton.addEventListener('click', () => {
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= slides.length) {
+                    nextIndex = 0; // Loop back to the start
+                }
+                moveToSlide(nextIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                let prevIndex = currentIndex - 1;
+                if (prevIndex < 0) {
+                    prevIndex = slides.length - 1; // Loop to the end
+                }
+                moveToSlide(prevIndex);
+            });
+
+            window.addEventListener('resize', () => {
+                updateSlideWidth();
+                moveToSlide(currentIndex);
+            });
             
-            // Lógica para o loop "infinito"
-            if (currentIndex === slides.length / 2) {
-                setTimeout(() => {
-                    track.style.transition = 'none';
-                    currentIndex = 0;
-                    track.style.transform = 'translateX(0)';
-                    setTimeout(() => {
-                         track.style.transition = 'transform 0.5s ease-in-out';
-                    }, 50)
-                }, 500);
-            }
+            updateSlideWidth();
         }
-        
-        nextButton.addEventListener('click', e => {
-            currentIndex++;
-            updateCarousel();
-        });
-
-        prevButton.addEventListener('click', e => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
 
         // --- SCRIPT PARA FAQ ACORDEÃO ---
         const faqItems = document.querySelectorAll('.faq-item');
@@ -636,13 +699,11 @@
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
-                // Fecha todos os outros itens
                 faqItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
                 });
 
-                // Abre ou fecha o item clicado
                 if (!isActive) {
                     item.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + 'px';

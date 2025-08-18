@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
     <style>
-        /* 🎨 PALETA DE CORES PASTEL E CONFIGURAÇÕES GLOBAIS 🎨 */
+        /* 🎨 NOVA PALETA DE CORES PASTEL E CONFIGURAÇÕES GLOBAIS 🎨 */
         :root {
-            --bg-rosa-clarissimo: #FFF5F8;
-            --rosa-destaque-vibrante: #D90368; /* Rosa mais forte para destaque */
-            --amarelo-cta: #FFC759;
-            --texto-escuro: #4A3F35;
-            --branco-card: #FFFFFF;
-            --sombra-suave: rgba(91, 79, 79, 0.08);
+            --bg-rosa-pastel: #FEF7F9;
+            --rosa-destaque-suave: #E799B0; /* Tom de 'dusty rose' */
+            --amarelo-creme-cta: #FDEEC9;
+            --texto-escuro: #5C524D;
+            --branco: #FFFFFF;
+            --sombra-suave: rgba(92, 82, 77, 0.08);
         }
 
         * {
@@ -36,18 +36,17 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-rosa-clarissimo);
-            /* Detalhe fofo de poá no fundo */
-            background-image: radial-gradient(rgba(244, 172, 183, 0.2) 1px, transparent 1px);
-            background-size: 15px 15px;
+            background-color: var(--bg-rosa-pastel);
+            background-image: radial-gradient(rgba(231, 153, 176, 0.15) 1px, transparent 1px);
+            background-size: 16px 16px;
             color: var(--texto-escuro);
             line-height: 1.7;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px; /* Padding interno do container */
+            padding: 20px;
             text-align: center;
         }
 
@@ -55,8 +54,8 @@
         .cta-button {
             display: inline-block;
             padding: 18px 40px;
-            margin-top: 20px;
-            background: linear-gradient(145deg, #FFD580, var(--amarelo-cta));
+            margin-top: 25px;
+            background-color: var(--amarelo-creme-cta);
             color: var(--texto-escuro);
             font-size: 1.1rem;
             font-weight: 700;
@@ -65,44 +64,38 @@
             border: 2px solid rgba(0,0,0,0.05);
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 199, 89, 0.5);
+            box-shadow: 0 4px 15px rgba(253, 238, 201, 0.8);
             transition: all 0.3s ease;
         }
 
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255, 199, 89, 0.7);
+            box-shadow: 0 8px 25px rgba(253, 238, 201, 1);
         }
         
         /* 🍰 DETALHE DE DESIGN: DIVISÓRIA DE GLACÊ 🍰 */
         .frosting-divider {
             position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
+            bottom: -1px; left: 0; width: 100%;
+            overflow: hidden; line-height: 0; transform: rotate(180deg);
         }
         .frosting-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 70px;
+            position: relative; display: block;
+            width: calc(100% + 1.3px); height: 70px;
         }
-        .frosting-divider .shape-fill {
-            fill: var(--bg-rosa-clarissimo);
-        }
+        .frosting-divider .shape-fill { fill: var(--bg-rosa-pastel); }
         
         /* 🧱 SEÇÕES 🧱 */
         section {
-            padding: 40px 0; /* Espaçamento entre seções reduzido */
+            padding: 40px 0;
             position: relative;
         }
         .section-card {
-            background-color: var(--branco-card);
+            background-color: var(--branco);
             border-radius: 20px;
             box-shadow: 0 10px 40px var(--sombra-suave);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         section h2 {
@@ -112,45 +105,66 @@
             font-weight: 700;
         }
         .highlight-pink {
-            color: var(--rosa-destaque-vibrante);
+            color: var(--rosa-destaque-suave);
         }
 
-        /* 🟥 Seção 1 – Headline + Hero */
+        /* 🟥 Seção 1 – NOVO LAYOUT DO HERO 🟥 */
         .hero {
-            padding-top: 30px;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '\f004'; /* Ícone de coração do Font Awesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-size: 40rem;
+            color: var(--branco);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+        .hero-video {
+            flex: 1;
+            max-width: 450px;
         }
         .logo-container {
-            margin-bottom: 25px;
+            margin-bottom: 15px; /* Espaço reduzido */
         }
         .logo-container img {
-            max-width: 180px;
+            max-width: 150px;
             height: auto;
         }
-        
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             line-height: 1.3;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-
         .hero p {
             font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0 auto 20px auto;
+            margin-bottom: 0;
         }
-
-        .hero .video-note {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--rosa-destaque-vibrante);
-            margin-bottom: 20px;
-        }
-
         #ifr_689669ae49028fb3642cd405_wrapper {
-            max-width: 700px !important;
+            width: 100%;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px var(--sombra-suave);
+            border: 8px solid var(--branco);
+            box-shadow: 0 10px 30px var(--sombra-suave),
+                        inset 0 0 0 2px var(--bg-rosa-pastel);
         }
 
         /* 🟩 Seção 2 – Prova Social */
@@ -158,58 +172,42 @@
             width: 100%;
             padding: 20px 0 40px 0;
         }
-        .swiper-slide {
-            width: 280px;
-        }
+        .swiper-slide { width: 280px; }
         .swiper-slide img {
-            display: block;
-            width: 100%;
+            display: block; width: 100%;
             border-radius: 15px;
-            border: 5px solid var(--branco-card);
+            border: 5px solid var(--branco);
             box-shadow: 0 5px 20px var(--sombra-suave);
         }
 
         /* 🟦 Seção 3 – O que você vai aprender */
         .learn-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            list-style: none; padding: 0;
+            text-align: left; display: grid;
+            grid-template-columns: 1fr; gap: 20px;
         }
         .learn-list li {
-            background-color: var(--bg-rosa-clarissimo);
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            font-size: 1.1rem;
-            border: 1px solid #eee;
+            background-color: var(--bg-rosa-pastel);
+            padding: 20px; border-radius: 15px;
+            display: flex; align-items: center;
+            gap: 20px; font-size: 1.1rem;
+            border: 1px solid #fdeff3;
         }
         .learn-list .icon-wrapper {
-            background-color: var(--branco-card);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--branco);
+            border-radius: 50%; width: 60px;
+            height: 60px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
         }
         .learn-list i {
             font-size: 1.8rem;
-            color: var(--rosa-destaque-vibrante);
+            color: var(--rosa-destaque-suave);
         }
 
         /* 🟪 Seção 4 – Oferta + Preço */
         .offer-box {
-            background: var(--branco-card);
-            border-radius: 30px;
-            padding: 40px;
-            border: 3px solid var(--amarelo-cta);
-            box-shadow: 0 10px 40px var(--sombra-suave);
+            border-radius: 30px; padding: 40px;
+            border: 3px solid var(--amarelo-creme-cta);
         }
         .price-old {
             font-size: 1.5rem;
@@ -218,45 +216,26 @@
         }
         .price-new {
             font-size: 3.5rem;
-            font-weight: 700;
-            margin: 10px 0;
+            font-weight: 700; margin: 10px 0;
         }
         .offer-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 400px;
-            margin: 30px auto 0 auto;
+            list-style: none; padding: 0; text-align: left;
+            max-width: 400px; margin: 30px auto 0 auto;
         }
-        .offer-list li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        .offer-list i {
-            color: var(--rosa-destaque-vibrante);
-            margin-right: 10px;
-        }
+        .offer-list li { margin-bottom: 15px; font-size: 1.1rem; }
+        .offer-list i { color: var(--rosa-destaque-suave); margin-right: 10px; }
 
         /* 🟫 Seção 5 – Garantia 30 Dias */
-        .guarantee-icon {
-            font-size: 5rem;
-            color: var(--rosa-destaque-vibrante);
-            margin-bottom: 20px;
-        }
+        .guarantee-icon { font-size: 5rem; color: var(--rosa-destaque-suave); margin-bottom: 20px; }
         
         /* ⬛ Seção 6 – FAQ */
         .faq-item {
-            background-color: var(--bg-rosa-clarissimo);
-            margin-bottom: 15px;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: left;
-            border: 1px solid #eee;
+            background-color: var(--bg-rosa-pastel);
+            margin-bottom: 15px; padding: 25px;
+            border-radius: 20px; text-align: left;
+            border: 1px solid #fdeff3;
         }
-        .faq-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+        .faq-item h3 { font-size: 1.2rem; margin-bottom: 10px; }
         
         /* 🟪 Seção Final – Reforço */
         .final-call-section .cta-button {
@@ -269,6 +248,13 @@
             100% { transform: scale(1.1); }
         }
         
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .hero .container { flex-direction: column; }
+            .hero-text { text-align: center; }
+            .hero-video { max-width: 600px; margin-top: 30px; }
+            .hero h1 { font-size: 2.2rem; }
+        }
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             section h2 { font-size: 2rem; }
@@ -283,19 +269,18 @@
     <!-- 🟥 Seção 1 – Headline + Hero com VSL -->
     <section class="hero">
         <div class="container">
-            <div class="logo-container">
-                <img src="https://i.imgur.com/G5c78eU.png" alt="Bem Casados Lucrativos Logo">
+            <div class="hero-text">
+                <div class="logo-container">
+                    <img src="https://i.imgur.com/G5c78eU.png" alt="Bem Casados Lucrativos Logo">
+                </div>
+                <h1>Transforme o docinho mais famoso dos casamentos – o <span class="highlight-pink">Bem Casado</span> – em até <span class="highlight-pink">R$3.000 de lucro</span> em um único final de semana.</h1>
+                <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
+                <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
             </div>
-            <h1>Transforme o docinho mais famoso dos casamentos – o <span class="highlight-pink">Bem Casado</span> – em até <span class="highlight-pink">R$3.000 de lucro</span> em um único final de semana.</h1>
-            <p>Casamentos acontecem todas as semanas… e cada um deles pode ser a sua chance de faturar alto com um doce simples e fácil de produzir.</p>
-            <p class="video-note">👇 Veja o vídeo e entenda tudo! 👇</p>
-            
-            <!-- SEU CÓDIGO EMBED DA VSL -->
-            <div>
-                <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_689669ae49028fb3642cd405_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+            <div class="hero-video">
+                <!-- SEU CÓDIGO EMBED DA VSL -->
+                <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_689669ae49028fb3642cd405_wrapper"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
             </div>
-            
-            <a href="#oferta" class="cta-button">QUERO COMEÇAR AGORA POR R$19,90</a>
         </div>
     </section>
 
@@ -334,20 +319,18 @@
 
     <!-- 🟪 Seção 4 – Oferta + Preço -->
     <section id="oferta">
-        <div class="container">
+        <div class="container section-card offer-box">
             <h2>Sua oportunidade de ouro está aqui! ✨</h2>
-            <div class="offer-box">
-                <p class="price-old">De R$197</p>
-                <p class="price-new">por apenas <span class="highlight-pink">R$19,90</span></p>
-                
-                <ul class="offer-list">
-                    <li><i class="fa-solid fa-check-circle"></i> Treinamento completo Bem Casados Lucrativos.</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Planilha de precificação automática.</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Modelos de contrato prontos.</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Receitas exclusivas e testadas.</li>
-                </ul>
-                 <a href="#oferta" class="cta-button" style="margin-top: 40px;">SIM, QUERO COMEÇAR POR R$19,90</a>
-            </div>
+            <p class="price-old">De R$197</p>
+            <p class="price-new">por apenas <span class="highlight-pink">R$19,90</span></p>
+            
+            <ul class="offer-list">
+                <li><i class="fa-solid fa-check-circle"></i> Treinamento completo Bem Casados Lucrativos.</li>
+                <li><i class="fa-solid fa-check-circle"></i> Planilha de precificação automática.</li>
+                <li><i class="fa-solid fa-check-circle"></i> Modelos de contrato prontos.</li>
+                <li><i class="fa-solid fa-check-circle"></i> Receitas exclusivas e testadas.</li>
+            </ul>
+             <a href="#oferta" class="cta-button" style="margin-top: 40px;">SIM, QUERO COMEÇAR POR R$19,90</a>
         </div>
         <div class="frosting-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

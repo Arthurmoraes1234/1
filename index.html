@@ -129,8 +129,6 @@
             height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
         }
         .learn-list i { font-size: 1.8rem; color: var(--rosa-destaque-suave); }
-
-        /* ✅ ESTILOS PARA NOVA SEÇÃO DE PERGUNTAS ✅ */
         .qa-container { text-align: left; margin-top: 40px; display: grid; gap: 20px; }
         .qa-item {
             background-color: var(--bg-rosa-pastel); padding: 20px; border-radius: 15px;
@@ -143,8 +141,6 @@
         .qa-item i { font-size: 1.6rem; color: var(--rosa-destaque-suave); }
         .qa-item-text h3 { font-size: 1.1rem; margin-bottom: 5px; font-weight: 700; }
         .qa-item-text p { font-size: 1rem; line-height: 1.6; }
-        
-        /* ✅ ESTILOS PARA O VÍDEO NOVO ✅ */
         .video-container {
             position: relative; margin: 40px auto; max-width: 450px;
             border-radius: 20px; overflow: hidden;
@@ -161,9 +157,20 @@
             transition: all 0.2s ease;
         }
         #unmute-button:hover { transform: scale(1.1); background-color: var(--branco); }
-
         .offer-box { border-radius: 30px; padding: 40px; border: 3px solid var(--amarelo-creme-cta); }
-        .price-old { font-size: 1.5rem; text-decoration: line-through; opacity: 0.7; }
+        
+        /* ✅ ESTILO PARA A IMAGEM DA OFERTA ✅ */
+        .offer-image {
+            width: 100%;
+            max-width: 500px; /* Limita o tamanho em telas maiores */
+            height: auto;
+            border-radius: 15px;
+            margin: 0 auto 30px auto; /* Centraliza e adiciona espaço abaixo */
+            display: block;
+            box-shadow: 0 8px 25px var(--sombra-suave);
+        }
+
+        .price-old { font-size: 1.5rem; text-decoration: line-through; opacity: 0.7; margin-top: 30px; }
         .price-new { font-size: 3.5rem; font-weight: 700; margin: 10px 0; }
         .offer-today {
             font-weight: 700; text-transform: uppercase; color: var(--texto-escuro);
@@ -226,7 +233,6 @@
                 </div>
             </div>
 
-            <!-- ✅ VÍDEO NOVO ADICIONADO AQUI ✅ -->
             <div class="video-container">
                 <video id="testimonial-video" src="https://video.wixstatic.com/video/512b9f_b3f64bf12fef434789e6623f4da9d420/480p/mp4/file.mp4" autoplay muted loop playsinline></video>
                 <button id="unmute-button">
@@ -252,7 +258,6 @@
                 <li><div class="icon-wrapper"><i class="fa-solid fa-star"></i></div> <span>Receitas exclusivas que deixam os clientes pedindo mais.</span></li>
             </ul>
              
-            <!-- ✅ SEÇÃO DE PERGUNTAS COM NOVO DESIGN ✅ -->
             <div class="qa-container">
                 <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 10px;">Talvez você ainda esteja se perguntando…</h3>
                 <div class="qa-item">
@@ -284,7 +289,10 @@
 
     <section id="oferta">
         <div class="container section-card offer-box">
-            <h2>Sua oportunidade de ouro está aqui! ✨</h2>
+            <!-- ✅ TÍTULO E IMAGEM ATUALIZADOS AQUI ✅ -->
+            <h2>Sua oportunidade de ouro está aqui!</h2>
+            <img src="https://static.wixstatic.com/media/512b9f_6afd54aecf3e4182bbe34964c1be22c8~mv2.png" alt="Conteúdo do Curso Bem Casados Lucrativos" class="offer-image">
+            
             <p class="price-old">De R$197</p>
             <p class="price-new">por apenas <span class="highlight-pink">R$19,90</span></p>
             <p class="offer-today">Oferta válida <span class="highlight-pink">somente hoje!</span></p>
@@ -355,7 +363,6 @@
         breakpoints: { 768: { slidesPerView: 3, spaceBetween: 30 } }
       });
 
-      // ✅ SCRIPT PARA O BOTÃO DE SOM DO VÍDEO ✅
       const video = document.getElementById('testimonial-video');
       const unmuteButton = document.getElementById('unmute-button');
       const unmuteIcon = unmuteButton.querySelector('i');
